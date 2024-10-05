@@ -28,104 +28,6 @@ public class IndexController {
         return "index.html";
     }
 
-    @GetMapping("/one")
-    public String one(Model model, HttpServletRequest request) {
-        numbers_actions.add('1');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/two")
-    public String two(Model model, HttpServletRequest request) {
-        numbers_actions.add('2');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/three")
-    public String three(Model model, HttpServletRequest request) {
-        numbers_actions.add('3');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/four")
-    public String four(Model model, HttpServletRequest request) {
-        numbers_actions.add('4');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/five")
-    public String five(Model model, HttpServletRequest request) {
-        numbers_actions.add('5');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/six")
-    public String six(Model model, HttpServletRequest request) {
-        numbers_actions.add('6');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/seven")
-    public String seven(Model model, HttpServletRequest request) {
-        numbers_actions.add('7');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/eight")
-    public String eight(Model model, HttpServletRequest request) {
-        numbers_actions.add('8');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/nine")
-    public String nine(Model model, HttpServletRequest request) {
-        numbers_actions.add('9');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/zero")
-    public String zero(Model model, HttpServletRequest request) {
-        numbers_actions.add('0');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/multiply")
-    public String multiply(Model model, HttpServletRequest request) {
-        numbers_actions.add('*');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/divide")
-    public String divide(Model model, HttpServletRequest request) {
-        numbers_actions.add('/');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/plus")
-    public String plus(Model model, HttpServletRequest request) {
-        numbers_actions.add('+');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/minus")
-    public String minus(Model model, HttpServletRequest request) {
-        numbers_actions.add('-');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/fractional")
-    public String fractional(Model model, HttpServletRequest request) {
-        numbers_actions.add('.');
-        return "redirect:/enterNumbers";
-    }
-
-    @GetMapping("/delete")
-    public String delete(Model model, HttpServletRequest request) {
-        if (!numbers_actions.isEmpty()) {
-            numbers_actions.remove(numbers_actions.size() - 1);
-        }
-        return "redirect:/enterNumbers";
-    }
-
     @GetMapping("/result")
     public String result(Model model, HttpServletRequest request) {
         StringBuilder sb = new StringBuilder();
@@ -194,6 +96,14 @@ public class IndexController {
         model.addAttribute("num", result);
         numbers_actions.clear();
         return "index";
+    }
+
+    public static List<Character> getNumbers_actions() {
+        return numbers_actions;
+    }
+
+    public static void setNumbers_actions(List<Character> numbers_actions) {
+        IndexController.numbers_actions = numbers_actions;
     }
 }
 
