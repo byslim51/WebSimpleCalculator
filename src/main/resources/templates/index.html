@@ -10,28 +10,29 @@
     <input type="text" th:value="${num}" name="number_input" id="numbers" size="41px" readonly>
 </label>
 <div class="first_div">
-    <a th:href="@{/seven}"><button class="num">7</button></a>
-    <a th:href="@{/eight}"><button class="num">8</button></a>
-    <a th:href="@{/nine}"><button class="num">9</button></a>
+    <a th:href="@{/add/{num}(num=${7})}"><button class="num">7</button></a>
+    <!--  <div class="col-4"><a class="btn btn-danger w-100" th:href="@{/vacancies/delete/{id}(id=${vacancy.id})}">Удалить</a></div>-->
+    <a th:href="@{/add/{num}(num=${8})}"><button class="num">8</button></a>
+    <a th:href="@{/add/{num}(num=${9})}"><button class="num">9</button></a>
     <a th:href="@{/delete}"><button class="num" style="background-color: orange;">AC</button></a>
-    <a th:href="@{/divide}"><button class="num" style="background-color: orange;">/</button></a>
+    <a th:href="@{/add/{num}(num='d')}"><button class="num" style="background-color: orange;">/</button></a>
 </div>
 <div>
-    <a th:href="@{/four}"><button class="num">4</button></a>
-    <a th:href="@{/five}"><button class="num">5</button></a>
-    <a th:href="@{/six}"><button class="num">6</button></a>
-    <a th:href="@{/minus}"><button class="num" style="background-color: orange;">-</button></a>
-    <a th:href="@{/multiply}"><button class="num" style="background-color: orange;">*</button></a>
+    <a th:href="@{/add/{num}(num=${4})}"><button class="num">4</button></a>
+    <a th:href="@{/add/{num}(num=${5})}"><button class="num">5</button></a>
+    <a th:href="@{/add/{num}(num=${6})}"><button class="num">6</button></a>
+    <a th:href="@{/add/{num}(num='m')}"><button class="num" style="background-color: orange;">-</button></a>
+    <a th:href="@{/add/{num}(num='u')}"><button class="num" style="background-color: orange;">*</button></a>
 </div>
 <div>
-    <a th:href="@{/one}"><button class="num">1</button></a>
-    <a th:href="@{/two}"><button class="num">2</button></a>
-    <a th:href="@{/three}"><button class="num">3</button></a>
-    <a th:href="@{/plus}"><button class="num" style="background-color: orange;">+</button></a>
-    <a th:href="@{/fractional}"><button class="num">.</button></a>
+    <a th:href="@{/add/{num}(num=${1})}"><button class="num">1</button></a>
+    <a th:href="@{/add/{num}(num=${2})}"><button class="num">2</button></a>
+    <a th:href="@{/add/{num}(num=${3})}"><button class="num">3</button></a>
+    <a th:href="@{/add/{num}(num='p')}"><button class="num" style="background-color: orange;">+</button></a>
+    <a th:href="@{/add/{num}(num='f')}"><button class="num">.</button></a>
 </div>
 <div>
-    <a th:href="@{/zero}"><button class="num" style="width: 204px;">0</button></a>
+    <a th:href="@{/add/{num}(num=${0})}"><button class="num" style="width: 204px;">0</button></a>
     <a th:href="@{/result}"><button class="num" style="width: 204px;">=</button></a>
 </div>
 </body>
